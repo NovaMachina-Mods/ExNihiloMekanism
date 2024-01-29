@@ -1,12 +1,12 @@
 package novamachina.exnihilomekanism.datagen.client;
 
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import novamachina.exnihilomekanism.common.utility.ExNihiloMekanismConstants.ModIds;
-import novamachina.novacore.data.AbstractLangGenerator;
+import novamachina.exnihilosequentia.datagen.api.datagen.AbstractLangGenerator;
 
 public class ExNihiloMekanismLangGenerator extends AbstractLangGenerator {
 
-  public ExNihiloMekanismLangGenerator(PackOutput gen, String locale) {
+  public ExNihiloMekanismLangGenerator(DataGenerator gen, String locale) {
     super(gen, ModIds.EX_NIHILO_MEKANISM, locale);
   }
 

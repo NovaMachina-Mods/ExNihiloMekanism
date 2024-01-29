@@ -30,6 +30,5 @@
     "recipes": [
       "exnihilomekanism:ens_osmium_pieces"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

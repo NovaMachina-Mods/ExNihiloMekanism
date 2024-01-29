@@ -1,21 +1,21 @@
 package novamachina.exnihilomekanism.datagen.client;
 
 import javax.annotation.Nullable;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import novamachina.exnihilomekanism.common.init.ExNihiloMekanismItems;
 import novamachina.exnihilomekanism.common.utility.ExNihiloMekanismConstants;
+import novamachina.exnihilosequentia.datagen.api.datagen.AbstractItemGenerator;
 
-public class ExNihiloMekanismOreItemGenerator extends ItemModelProvider {
+public class ExNihiloMekanismOreItemGenerator extends AbstractItemGenerator {
 
   private static final String ITEM_GENERATED_TAG = "item/generated";
   private static final String LAYER_0_TAG = "layer0";
 
   public ExNihiloMekanismOreItemGenerator(
-	  PackOutput generator, ExistingFileHelper existingFileHelper) {
+      DataGenerator generator, ExistingFileHelper existingFileHelper) {
     super(generator, ExNihiloMekanismConstants.ModIds.EX_NIHILO_MEKANISM, existingFileHelper);
   }
 

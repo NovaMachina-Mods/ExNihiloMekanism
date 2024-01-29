@@ -4,7 +4,7 @@ license = "Creative Commons"
 issueTrackerURL = "${git_url}/issues" #optional
 [[mods]] #mandatory
 modId = "exnihilomekanism" #mandatory
-version = "${mod_version}" #mandatory
+version = "${version}" #mandatory
 displayName = "Ex Nihilo: Sequentia - Mekanism Addon" #mandatory
 displayURL = "${curseforge_url}" #optional
 logoFile = "logo.png" #optional
@@ -17,18 +17,12 @@ description = '''
 [[dependencies.exnihilomekanism]]
 modId = "exnihilosequentia"
 mandatory = true
-versionRange = "${exnihilo_range}"
-ordering = "AFTER"
-side = "BOTH"
-[[dependencies.exnihilomekanism]]
-modId = "novacore"
-mandatory = true
-versionRange = "${nova_core_range}"
+versionRange = "${ex_nihilo_version}"
 ordering = "AFTER"
 side = "BOTH"
 [[dependencies.exnihilomekanism]]
 modId = "mekanism"
 mandatory = true
-versionRange = "${mekanism_range}"
+versionRange = "${mekanism_version}"
 ordering = "AFTER"
 side = "BOTH"

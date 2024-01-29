@@ -2,24 +2,20 @@ package novamachina.exnihilomekanism.common.init;
 
 import com.mojang.logging.LogUtils;
 import javax.annotation.Nonnull;
-
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import novamachina.exnihilomekanism.common.utility.ExNihiloMekanismConstants;
-import novamachina.exnihilosequentia.world.item.EXNCreativeModeTabs;
-import novamachina.exnihilosequentia.world.item.EXNItems;
-import novamachina.novacore.world.item.CreativeModeTabDefinition;
-import org.slf4j.Logger;
+import novamachina.exnihilosequentia.common.init.ExNihiloItems;
+import novamachina.exnihilosequentia.common.utility.ExNihiloLogger;
 
 @Mod.EventBusSubscriber(
     modid = ExNihiloMekanismConstants.ModIds.EX_NIHILO_MEKANISM,
     bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ExNihiloMekanismInitialization {
 
-  private static final Logger logger = LogUtils.getLogger();
+  private static final ExNihiloLogger logger = new ExNihiloLogger(LogUtils.getLogger());
 
   private ExNihiloMekanismInitialization() {}
 
@@ -29,25 +25,15 @@ public class ExNihiloMekanismInitialization {
     enableOres();
   }
 
-  public static void addToCreativeTab(BuildCreativeModeTabContentsEvent event) {
-    logger.debug("Fired BuildCreativeModeTabContentsEvent");
-	for (CreativeModeTabDefinition tab : EXNCreativeModeTabs.getDefinitions()) {
-		if (event.getTab() == tab.tab()) {
-			event.accept(ExNihiloMekanismItems.OSMIUM_PIECES.get());
-		}
-	}
-  }
-
   public static void init(@Nonnull final IEventBus modEventBus) {
     logger.debug("Initializing modded items");
     ExNihiloMekanismItems.init(modEventBus);
-	modEventBus.addListener(ExNihiloMekanismInitialization::addToCreativeTab);
   }
 
   private static void enableOres() {
-    EXNItems.TIN.setEnabled(true);
-    EXNItems.COPPER.setEnabled(true);
-    EXNItems.URANIUM.setEnabled(true);
-    EXNItems.LEAD.setEnabled(true);
+    ExNihiloItems.TIN.setEnabled(true);
+    ExNihiloItems.COPPER.setEnabled(true);
+    ExNihiloItems.URANIUM.setEnabled(true);
+    ExNihiloItems.LEAD.setEnabled(true);
   }
 }

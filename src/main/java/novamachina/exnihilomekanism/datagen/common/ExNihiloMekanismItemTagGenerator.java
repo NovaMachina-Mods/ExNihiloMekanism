@@ -1,29 +1,28 @@
 package novamachina.exnihilomekanism.datagen.common;
 
-import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.BlockTagsProvider;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import novamachina.exnihilomekanism.common.init.ExNihiloMekanismItems;
 import novamachina.exnihilomekanism.common.utility.ExNihiloMekanismConstants;
-import novamachina.exnihilosequentia.tags.ExNihiloTags;
-import novamachina.novacore.data.tags.TagProvider;
+import novamachina.exnihilosequentia.api.tag.ExNihiloTags;
+import novamachina.exnihilosequentia.datagen.api.datagen.AbstractItemTagGenerator;
 
-import java.util.concurrent.CompletableFuture;
+public class ExNihiloMekanismItemTagGenerator extends AbstractItemTagGenerator {
 
-public class ExNihiloMekanismItemTagGenerator extends TagProvider {
-
-  public ExNihiloMekanismItemTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
+  public ExNihiloMekanismItemTagGenerator(
+      DataGenerator generator,
+      BlockTagsProvider blockTagsProvider,
+      ExistingFileHelper existingFileHelper) {
     super(
-        output,
-        lookupProvider,
+        generator,
+        blockTagsProvider,
         ExNihiloMekanismConstants.ModIds.EX_NIHILO_MEKANISM,
         existingFileHelper);
   }
 
-	@Override
-	protected void registerTags() {
-		addToTag(ExNihiloTags.PIECE, ExNihiloMekanismItems.OSMIUM_PIECES.get());
-	}
+  @Override
+  protected void addTags() {
+    tag(ExNihiloTags.PIECE).add(ExNihiloMekanismItems.OSMIUM_PIECES.get());
+  }
 }
