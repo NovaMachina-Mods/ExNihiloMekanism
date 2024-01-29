@@ -1,5 +1,5 @@
 {
-  "type": "exnihilosequentia:sieve",
+  "type": "exnihilosequentia:sifting",
   "input": {
     "item": "minecraft:sand"
   },
