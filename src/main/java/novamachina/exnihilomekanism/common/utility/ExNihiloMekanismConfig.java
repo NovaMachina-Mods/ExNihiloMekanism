@@ -25,22 +25,27 @@ public class ExNihiloMekanismConfig {
     COMMON_CONFIG = COMMON_BUILDER.build();
   }
 
-  private ExNihiloMekanismConfig() {
-  }
+  private ExNihiloMekanismConfig() {}
 
   public static boolean enableOsmium() {
     return enableOsmium.get();
   }
 
   private static void oreConfigs() {
-    enableOsmium = COMMON_BUILDER.comment(
-            "Enable osmium ore pieces, chunks and ingots if they exist. 'enableOreOverride' in the main Ex Nihilo config must be true for this to work. (Default: true)")
-        .define("enableOsmium", true);
+    enableOsmium =
+        COMMON_BUILDER
+            .comment(
+                "Enable osmium ore pieces, chunks and ingots if they exist. 'enableOreOverride' in the main Ex Nihilo config must be true for this to work. (Default: true)")
+            .define("enableOsmium", true);
   }
 
   public static void loadConfig(ForgeConfigSpec spec, Path path) {
-    final CommentedFileConfig configData = CommentedFileConfig.builder(path).sync().autosave()
-        .writingMode(WritingMode.REPLACE).build();
+    final CommentedFileConfig configData =
+        CommentedFileConfig.builder(path)
+            .sync()
+            .autosave()
+            .writingMode(WritingMode.REPLACE)
+            .build();
 
     configData.load();
     spec.setConfig(configData);

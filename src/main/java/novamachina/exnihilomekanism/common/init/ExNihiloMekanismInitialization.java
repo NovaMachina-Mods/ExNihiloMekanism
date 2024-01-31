@@ -2,7 +2,6 @@ package novamachina.exnihilomekanism.common.init;
 
 import com.mojang.logging.LogUtils;
 import javax.annotation.Nonnull;
-
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,17 +30,17 @@ public class ExNihiloMekanismInitialization {
 
   public static void addToCreativeTab(BuildCreativeModeTabContentsEvent event) {
     logger.debug("Fired BuildCreativeModeTabContentsEvent");
-	for (CreativeModeTabDefinition tab : EXNCreativeModeTabs.getDefinitions()) {
-		if (event.getTab() == tab.tab()) {
-			event.accept(ExNihiloMekanismItems.OSMIUM_PIECES.get());
-		}
-	}
+    for (CreativeModeTabDefinition tab : EXNCreativeModeTabs.getDefinitions()) {
+      if (event.getTab() == tab.tab()) {
+        event.accept(ExNihiloMekanismItems.OSMIUM_PIECES.get());
+      }
+    }
   }
 
   public static void init(@Nonnull final IEventBus modEventBus) {
     logger.debug("Initializing modded items");
     ExNihiloMekanismItems.init(modEventBus);
-	modEventBus.addListener(ExNihiloMekanismInitialization::addToCreativeTab);
+    modEventBus.addListener(ExNihiloMekanismInitialization::addToCreativeTab);
   }
 
   private static void enableOres() {

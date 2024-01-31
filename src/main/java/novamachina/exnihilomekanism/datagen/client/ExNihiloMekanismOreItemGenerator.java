@@ -15,7 +15,7 @@ public class ExNihiloMekanismOreItemGenerator extends ItemModelProvider {
   private static final String LAYER_0_TAG = "layer0";
 
   public ExNihiloMekanismOreItemGenerator(
-	  PackOutput generator, ExistingFileHelper existingFileHelper) {
+      PackOutput generator, ExistingFileHelper existingFileHelper) {
     super(generator, ExNihiloMekanismConstants.ModIds.EX_NIHILO_MEKANISM, existingFileHelper);
   }
 

@@ -16,9 +16,7 @@ public class ExNihiloMekanismItems {
       DeferredRegister.create(
           ForgeRegistries.ITEMS, ExNihiloMekanismConstants.ModIds.EX_NIHILO_MEKANISM);
   public static final RegistryObject<Item> OSMIUM_PIECES =
-      ITEMS.register(
-          "osmium_pieces",
-          () -> new Item(new Item.Properties()));
+      ITEMS.register("osmium_pieces", () -> new Item(new Item.Properties()));
   @Nonnull private static final Logger logger = LogUtils.getLogger();
 
   public static void init(IEventBus modEventBus) {

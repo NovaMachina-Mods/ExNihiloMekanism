@@ -6,15 +6,13 @@ public class ExNihiloMekanismConstants {
 
     public static final String EX_NIHILO_MEKANISM = "exnihilomekanism";
 
-    private ModIds() {
-    }
+    private ModIds() {}
   }
 
   public class Ore {
 
     public static final String OSMIUM = "osmium";
 
-    private Ore() {
-    }
+    private Ore() {}
   }
 }

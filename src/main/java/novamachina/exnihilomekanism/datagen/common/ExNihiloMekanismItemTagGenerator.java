@@ -1,20 +1,20 @@
 package novamachina.exnihilomekanism.datagen.common;
 
+import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import novamachina.exnihilomekanism.common.init.ExNihiloMekanismItems;
 import novamachina.exnihilomekanism.common.utility.ExNihiloMekanismConstants;
 import novamachina.exnihilosequentia.tags.ExNihiloTags;
 import novamachina.novacore.data.tags.TagProvider;
 
-import java.util.concurrent.CompletableFuture;
-
 public class ExNihiloMekanismItemTagGenerator extends TagProvider {
 
-  public ExNihiloMekanismItemTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
+  public ExNihiloMekanismItemTagGenerator(
+      PackOutput output,
+      CompletableFuture<HolderLookup.Provider> lookupProvider,
+      ExistingFileHelper existingFileHelper) {
     super(
         output,
         lookupProvider,
@@ -22,8 +22,8 @@ public class ExNihiloMekanismItemTagGenerator extends TagProvider {
         existingFileHelper);
   }
 
-	@Override
-	protected void registerTags() {
-		addToTag(ExNihiloTags.PIECE, ExNihiloMekanismItems.OSMIUM_PIECES.get());
-	}
+  @Override
+  protected void registerTags() {
+    addToTag(ExNihiloTags.PIECE, ExNihiloMekanismItems.OSMIUM_PIECES.get());
+  }
 }
