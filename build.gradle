@@ -363,8 +363,6 @@ task publishCurseForge(type: TaskPublishCurseForge) {
     apiToken = System.getenv("CURSEFORGE_KEY")
     String projectId = curseforge_id
 
-    debugMode = true
-
     UploadArtifact mainFile = upload(projectId, jar)
     mainFile.releaseType = release_type
     mainFile.changelogType = 'markdown'
@@ -373,7 +371,7 @@ task publishCurseForge(type: TaskPublishCurseForge) {
     mainFile.addGameVersion(minecraft_version)
 
     mainFile.addRequirement('novacore')
-    mainFile.addRequirement('exnihilosequentia')
+    mainFile.addRequirement('ex-nihilo-sequentia')
     mainFile.addOptional('jade')
     mainFile.addOptional('jei')
     mainFile.addOptional('the-one-probe')
@@ -383,8 +381,6 @@ modrinth {
     token = System.getenv("MODRINTH_TOKEN")
     projectId = modrinth_project_id
 
-    debugMode = true
-
     uploadFile = jar
     versionType = release_type
     gameVersions = [minecraft_version]
@@ -392,7 +388,7 @@ modrinth {
     changelog = (file('CHANGELOG.md').exists() ? file('CHANGELOG.md').text : DEFAULT_CHANGELOG)
     dependencies {
         required.project('novacore')
-        required.project('exnihilosequentia')
+        required.project('ex-nihilo-sequentia')
         optional.project('jade')
         optional.project('jei')
         optional.project('the-one-probe')
