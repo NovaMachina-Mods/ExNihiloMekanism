@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "x": {
       "item": "exnihilomekanism:osmium_pieces"
@@ -11,5 +12,6 @@
   ],
   "result": {
     "item": "mekanism:raw_osmium"
-  }
+  },
+  "show_notification": true
 }
