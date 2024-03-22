@@ -3,10 +3,8 @@ package novamachina.exnihilomekanism.common;
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
 import java.nio.file.Path;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-@Mod.EventBusSubscriber
 public class Config {
 
   public static final ModConfigSpec COMMON_CONFIG;

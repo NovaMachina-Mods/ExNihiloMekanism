@@ -38,5 +38,5 @@ license="CC BY-NC-SA 4.0"
    type="required"
    ordering="AFTER"
    side="BOTH"
-   versionRange="[10.5.8.30, 10.6.0.0)"
+   versionRange="[10.5.8, 10.6.0)"
 
