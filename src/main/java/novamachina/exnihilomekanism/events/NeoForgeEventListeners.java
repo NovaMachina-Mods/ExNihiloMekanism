@@ -1,6 +1,5 @@
-package novamachina.exnihilomekanism.common.init;
+package novamachina.exnihilomekanism.events;
 
-import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -11,13 +10,13 @@ import novamachina.exnihilosequentia.world.item.EXNCreativeModeTabs;
 import novamachina.exnihilosequentia.world.item.EXNItems;
 import novamachina.novacore.world.item.CreativeModeTabDefinition;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Mod.EventBusSubscriber(modid = ExNihiloMekanism.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class ExNihiloMekanismInitialization {
+public class NeoForgeEventListeners {
+  private NeoForgeEventListeners() {}
 
-  private static final Logger logger = LogUtils.getLogger();
-
-  private ExNihiloMekanismInitialization() {}
+  private static final Logger logger = LoggerFactory.getLogger(NeoForgeEventListeners.class);
 
   @SubscribeEvent
   public static void onServerStart(ServerStartingEvent event) {

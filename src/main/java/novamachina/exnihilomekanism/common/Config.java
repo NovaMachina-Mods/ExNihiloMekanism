@@ -1,21 +1,20 @@
-package novamachina.exnihilomekanism.common.utility;
+package novamachina.exnihilomekanism.common;
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
 import java.nio.file.Path;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.Builder;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 @Mod.EventBusSubscriber
-public class ExNihiloMekanismConfig {
+public class Config {
 
-  public static final ForgeConfigSpec COMMON_CONFIG;
+  public static final ModConfigSpec COMMON_CONFIG;
   private static final String CATEGORY_ORE = "ore";
 
-  private static final Builder COMMON_BUILDER = new Builder();
+  private static final ModConfigSpec.Builder COMMON_BUILDER = new ModConfigSpec.Builder();
   // Ore
-  private static ForgeConfigSpec.BooleanValue enableOsmium;
+  private static ModConfigSpec.BooleanValue enableOsmium;
 
   static {
     COMMON_BUILDER.comment("Compatibility Configs").push(CATEGORY_ORE);
@@ -25,7 +24,7 @@ public class ExNihiloMekanismConfig {
     COMMON_CONFIG = COMMON_BUILDER.build();
   }
 
-  private ExNihiloMekanismConfig() {}
+  private Config() {}
 
   public static boolean enableOsmium() {
     return enableOsmium.get();
@@ -39,7 +38,7 @@ public class ExNihiloMekanismConfig {
             .define("enableOsmium", true);
   }
 
-  public static void loadConfig(ForgeConfigSpec spec, Path path) {
+  public static void loadConfig(ModConfigSpec spec, Path path) {
     final CommentedFileConfig configData =
         CommentedFileConfig.builder(path)
             .sync()

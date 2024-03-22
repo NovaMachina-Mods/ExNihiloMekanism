@@ -1,19 +1,18 @@
 package novamachina.exnihilomekanism;
 
+import static novamachina.exnihilomekanism.ExNihiloMekanism.MOD_ID;
+
 import com.mojang.logging.LogUtils;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import novamachina.exnihilomekanism.common.init.ExNihiloMekanismInitialization;
-import novamachina.exnihilomekanism.common.utility.ExNihiloMekanismConstants;
+import net.neoforged.fml.common.Mod;
 import org.slf4j.Logger;
 
-@Mod(ExNihiloMekanismConstants.ModIds.EX_NIHILO_MEKANISM)
+@Mod(MOD_ID)
 public class ExNihiloMekanism {
 
+  public static final String MOD_ID = "exnihilomekanism";
   private static final Logger logger = LogUtils.getLogger();
 
   public ExNihiloMekanism() {
     logger.debug("Starting Ex Nihilo: Sequentia - Mekanism Addon");
-    ExNihiloMekanismInitialization.init(FMLJavaModLoadingContext.get().getModEventBus());
   }
 }

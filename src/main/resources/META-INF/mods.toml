@@ -1,34 +1,42 @@
-modLoader = "javafml" #mandatory
-loaderVersion = "${loader_version}" #mandatory
-license = "Creative Commons"
-issueTrackerURL = "${git_url}/issues" #optional
-[[mods]] #mandatory
-modId = "exnihilomekanism" #mandatory
-version = "${mod_version}" #mandatory
-displayName = "Ex Nihilo: Sequentia - Mekanism Addon" #mandatory
-displayURL = "${curseforge_url}" #optional
-logoFile = "logo.png" #optional
-credits = "" #optional
-authors = "NovaMachina" #optional
-# The description text for the mod (multi line!) (#mandatory)
-description = '''
-    An addon for Ex Nihilo: Sequentia that adds support for Mekanism.
-    '''
+modLoader="javafml"
+loaderVersion="[1,)"
+issueTrackerURL="https://github.com/NovaMachina-Mods/ExNihiloMekanism/issues"
+license="CC BY-NC-SA 4.0"
+
+[[mods]]
+    modId="exnihilomekanism"
+    logoFile="logo.png"
+    version="1.0.0"
+    displayName="Ex Nihilo: Sequentia - Mekanim Addon"
+    updateJSONURL="https://api.modrinth.com/updates/3MbBTiGC/forge_updates.json"
+    authors="NovaMachina"
+    description='''Addon for Ex Nihilo: Sequentia to add support for Mekanism'''
+
 [[dependencies.exnihilomekanism]]
-modId = "exnihilosequentia"
-mandatory = true
-versionRange = "${exnihilo_range}"
-ordering = "AFTER"
-side = "BOTH"
+    modId="neoforge"
+    type="required"
+    versionRange="[20.4, 21)"
+    ordering="NONE"
+    side="BOTH"
+
 [[dependencies.exnihilomekanism]]
-modId = "novacore"
-mandatory = true
-versionRange = "${nova_core_range}"
-ordering = "AFTER"
-side = "BOTH"
+    modId="minecraft"
+    type="required"
+    versionRange="[1.20.4,1.21)"
+    ordering="NONE"
+    side="BOTH"
+
 [[dependencies.exnihilomekanism]]
-modId = "mekanism"
-mandatory = true
-versionRange = "${mekanism_range}"
-ordering = "AFTER"
-side = "BOTH"
+   modId="exnihilosequentia"
+   type="required"
+   ordering="AFTER"
+   side="BOTH"
+   versionRange="[6.0.0, 7.0.0)"
+
+[[dependencies.exnihilomekanism]]
+   modId="mekanism"
+   type="required"
+   ordering="AFTER"
+   side="BOTH"
+   versionRange="[10.5.8.30, 10.6.0.0)"
+

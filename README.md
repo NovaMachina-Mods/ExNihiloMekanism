@@ -1,10 +1,12 @@
-<p align="center">
-    <a href="https://www.curseforge.com/minecraft/mc-mods/ex-nihilo-sequentia-mekanism-addon"><img src="https://cf.way2muchnoise.eu/full_430787_downloads.svg" /></a>
-    <a href="https://www.curseforge.com/minecraft/mc-mods/ex-nihilo-sequentia-mekanism-addon"><img src="https://cf.way2muchnoise.eu/versions/430787.svg" /></a>
-    <a href="https://github.com/NovaMachina-Mods/ExNihiloMekanism/blob/1.19/LICENSE"><img alt="GitHub license" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-brightgreen"></a>
-    <a href="https://github.com/NovaMachina-Mods/ExNihiloMekanism/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/NovaMachina-Mods/ExNihiloMekanism"></a>
-    <a href="https://github.com/NovaMachina-Mods/ExNihiloMekanism/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/NovaMachina-Mods/ExNihiloMekanism"></a>
-</p>
+![CurseForge Downloads](https://img.shields.io/curseforge/dt/430787?style=for-the-badge&logo=curseforge)
+![CurseForge Downloads](https://img.shields.io/curseforge/game-versions/430787?style=for-the-badge&logo=curseforge)
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/3MbBTiGC?style=for-the-badge&logo=modrinth)
+![Modrinth Downloads](https://img.shields.io/modrinth/game-versions/3MbBTiGC?style=for-the-badge&logo=modrinth)
+![Static Badge](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-green?style=for-the-badge)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/NovaMachina-Mods/ExNihiloMekanism?style=for-the-badge&logo=github)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/NovaMachina-Mods/ExNihiloMekanism/build_1_20.yaml?style=for-the-badge&logo=github&label=1.20%20Build)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/NovaMachina-Mods/ExNihiloMekanism/build_1_20_dev.yaml?style=for-the-badge&logo=github&label=1.20-dev%20Build)
+
 
 # Ex Nihilo: Sequentia - Mekanism Addon for Minecraft 1.19
 
@@ -28,27 +30,27 @@ Artwork of this mod is licensed under an All rights reserved license: Copyright 
 
 # Maven
 
-Ex Nihilo: Sequentia - Mekanism Addon is avaliable via the [NovaMachina Mods artifact repository](https://cloudsmith.io/~novamachina-mods/repos/ex-nihilo-sequentia/packages/) for developers wishing to utilize its API.
+Ex Nihilo: Sequentia - Mekanism Addon is avaliable via the [NovaMachina Mods artifact repository](https://cloudsmith.io/~novamachina-mods/repos/release/packages/) for developers wishing to utilize its API.
 
 Add the following to your `build.gradle`:
 
 ```groovy
 repositories {
     maven {
-        url = "https://dl.cloudsmith.io/public/novamachina-mods/ex-nihilo-sequentia/maven/"
+        url = "https://dl.cloudsmith.io/public/novamachina-mods/release/maven/"
 
     }
 }
 
 dependencies {
-    implementation(fg.deobf("novamachina.exnihilomekanism:ExNihiloMekanism:${exnihilo_version}"))
+    implementation(fg.deobf("novamachina.exnihilomekanism:ExNihiloMekanism:${exmekanism_version}"))
 }
 ```
 
-Add the following to your `gradle.properties` (see [Maven](https://cloudsmith.io/~novamachina-mods/repos/ex-nihilo-sequentia/packages/) for the list of available versions):
+Add the following to your `gradle.properties` (see [Maven](https://cloudsmith.io/~novamachina-mods/repos/release/packages/) for the list of available versions):
 
 ```properties
-exnihilo_version: 1.19.2-4.1.0.55-beta
+exnmekanism_version: 1.19.2-4.1.0.55-beta
 ```
 
 [![Hosted By: Cloudsmith](https://img.shields.io/badge/OSS%20hosting%20by-cloudsmith-blue?logo=cloudsmith&style=for-the-badge)](https://cloudsmith.com)
